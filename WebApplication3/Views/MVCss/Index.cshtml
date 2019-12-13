@@ -1,0 +1,21 @@
+﻿@model IEnumerable<WebApplication3.Models.MVC>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+<div>
+    <table>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+        </tr>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@Html.DisplayFor(m => item.Id)</td>
+            <td>@Html.DisplayFor(m => item.Name)</td>
+        </tr>
+        }
+    </table>
+</div>
