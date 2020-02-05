@@ -1,0 +1,38 @@
+﻿@model  LeaveManager.Models.CreateLeaveAllocation
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+          
+            <th>
+               Leave Type
+            </th>
+            
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.LeaveTypeVMs) {
+        <tr>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            
+            <td>
+                @Html.ActionLink("Allocate to Employee", "SetLeave", new { id=item.Id }) |
+                
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
